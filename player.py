@@ -23,7 +23,7 @@ class Player(pygame.sprite.Sprite):
         num_columns = 5  # Replace with the actual number of columns
         num_rows = 3     # Replace with the actual number of rows
 
-        self.idle_frames = self.extract_frames(9, 10, num_columns, num_rows)
+        self.idle_frames = self.extract_frames(8, 9, num_columns, num_rows)
         self.running_frames = self.extract_frames(0, 9, num_columns, num_rows)
         self.jumping_frames = self.extract_frames(11, 13, num_columns, num_rows)
         self.current_frames = self.idle_frames
