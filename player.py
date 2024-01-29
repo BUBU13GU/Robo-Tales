@@ -7,10 +7,10 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
         self.speed = 5
         self.velocity_y = 0  # Vertical velocity for jumping
-        self.gravity = 0.5
+        self.gravity = 0.4
         self.is_running = False
         self.is_jumping = False
-        self.scale_factor = 0.1
+        self.scale_factor = 0.5
         self.current_level = None
         self.animation_speed = 150  # Animation speed; lower is faster
         self.current_time = 0
@@ -23,9 +23,9 @@ class Player(pygame.sprite.Sprite):
         num_columns = 5  # Replace with the actual number of columns
         num_rows = 3     # Replace with the actual number of rows
 
-        self.idle_frames = self.extract_frames(8, 9, num_columns, num_rows)
-        self.running_frames = self.extract_frames(0, 9, num_columns, num_rows)
-        self.jumping_frames = self.extract_frames(11, 13, num_columns, num_rows)
+        self.idle_frames = self.extract_frames(0,5, num_columns, num_rows)
+        self.running_frames = self.extract_frames(5, 10, num_columns, num_rows)
+        self.jumping_frames = self.extract_frames(10, 15, num_columns, num_rows)
         self.current_frames = self.idle_frames
         self.frame_index = 0
         self.image = self.current_frames[self.frame_index]
