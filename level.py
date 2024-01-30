@@ -3,17 +3,9 @@ import random
 import pygame
 from settings import SCREEN_WIDTH, SCREEN_HEIGHT
 from game_objects import Coin
-from power_ups import PowerUp
+from game_objects import Platform
+from game_objects import PowerUp
 from enemies import Enemy
-
-class Platform(pygame.sprite.Sprite):
-    def __init__(self, x, y, width, height):
-        super().__init__()
-        self.image = pygame.Surface((width, height))
-        self.image.fill((255, 0, 0))  # Red color for visibility
-        self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
 
 class Level:
     def __init__(self, player, screen):
@@ -68,7 +60,7 @@ class Level:
 
     def load_coins(self):
         # Place coins at random positions
-        for _ in range(10):  # Example: Generate 10 coins
+        for _ in range(20):  # Example: Generate 10 coins
             x = random.randint(0, SCREEN_WIDTH - 20)
             y = random.randint(0, SCREEN_HEIGHT - 60)
             coin = Coin(x, y)
